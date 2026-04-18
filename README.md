@@ -96,7 +96,7 @@ This project is licensed under the terms of the [GNU General Public License v3.0
 - More that I can't remember right now and will have to be added in the future
 
 ## For this specific fork credits:
- **[Ocin4ever](https://github.com/Ocin4ever)** for the essential patches and technical foundation for Samsung Galaxy Note 10 devices.
+- **[Ocin4ever](https://github.com/Ocin4ever)** for the essential patches and technical foundation for Samsung Galaxy Note 10 devices.
  
 ## Original ExtremeROM credits:
 A big thanks goes to the following for their invaluable contributions in no particular order (MORE INFO AND PEOPLE: TO BE WRITTEN)
