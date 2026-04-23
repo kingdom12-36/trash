@@ -39,5 +39,5 @@ jobs:
             echo "No changes detected. The d2s folder is already up to date."
           else
             git commit -m "Import d2s target from EternityROM (Branch: fifteen)"
-            git push origin main          
+            git push origin sixteen       
           fi
