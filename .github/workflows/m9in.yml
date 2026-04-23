@@ -1,0 +1,39 @@
+name: Generate and Push ROM Signing Keys
+
+on:
+  workflow_dispatch: 
+
+permissions:
+  contents: write
+# ------------------------------------------
+
+jobs:
+  generate-and-push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Generate AOSP Platform Keys
+        run: |
+          mkdir -p security
+          openssl genrsa -out security/platform.key 2048
+          openssl req -new -x509 -sha256 -key security/platform.key -out security/extremerom_platform.x509.pem -days 10000 \
+            -subj "/C=US/ST=Unknown/L=Unknown/O=ArtisanROM/OU=Development/CN=ExtremeROM"
+          openssl pkcs8 -in security/platform.key -topk8 -outform DER -out security/extremerom_platform.pk8 -nocrypt
+          rm security/platform.key
+          echo "✅ Keys generated"
+
+      - name: Commit and Push Keys
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          git add security/extremerom_platform.pk8 security/extremerom_platform.x509.pem
+          
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Security: Automatically generate ROM signing keys"
+            git push
+          fi
