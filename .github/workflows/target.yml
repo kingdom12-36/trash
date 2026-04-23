@@ -19,10 +19,10 @@ jobs:
           mkdir -p target
           
           # 3. I remove any old d2s folder to avoid mixing old and new files
-          rm -rf target/d1xks
+          rm -rf target/d2s
           
           # 4. I copy the fresh d2s folder exactly where it belongs
-          cp -r /tmp/EternityROM/target/d1xks target/
+          cp -r /tmp/EternityROM/target/d2s target/
 
       - name: Configure Bot Identity
         run: |
