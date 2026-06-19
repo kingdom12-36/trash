@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout UN1CA Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           ref: sixteen
           token: ${{ secrets.MY_TOKEN }}
