@@ -1,5 +1,5 @@
 # [
-EXTREMEKRNL_REPO="https://github.com/Ocin4ever/ExtremeKernel/releases"
+EXTREMEKRNL_REPO="https://github.com/kingdom12-36/Kernel/actions"
 
 REPLACE_KERNEL_BINARIES()
 {
@@ -8,7 +8,7 @@ REPLACE_KERNEL_BINARIES()
     # ​This kernel actually won't boot. You need to flash Creeeeger/9820_kernel from the OneUI8Stable branch instead: https://github.com/Creeeeger/9820_kernel
     # Changed from /latest/download/ to /download/v1.0/ 
     # This ensures it grabs the d1xks kernel from the initial release
-    ZIP_LINK="https://github.com/Ocin4ever/ExtremeKernel/releases/download/v1.0/ExtremeKRNL-Nexus-${TARGET_CODENAME}.zip"
+    ZIP_LINK="https://github.com/kingdom12-36/Kernel/actions/runs/30152263181/artifacts/8618159736"
 
     LOG "Downloading $(basename "$ZIP_LINK")"
     
